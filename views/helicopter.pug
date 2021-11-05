@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  - let helicopters = [{helicopterType :"Army helicopter", helicopterPrice: 1000000, helicopterColor:"Green"},{helicopterType :"fully articulated", helicopterPrice: 5000000, helicopterColor:"Yellow"},{helicopterType :"teetering", helicopterPrice: 3000000, helicopterColor:"Grey"}]
+  div(class="container-fluid mt-3")
+  div(class="row")
+    each helicopter ,index in helicopters  
+        div(class="col-sm-4" onclick=`buy(${index})`) #{helicopter.helicopterType } - #{helicopter.helicopterPrice} - #{helicopter.helicopterColor}
+
+    script.
+        function buy(itemNumber)
+        {
+            alert(`You purchased Item ${itemNumber+1}`)
+        }
+    
