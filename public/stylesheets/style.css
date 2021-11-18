@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+.costumeAttr { 
+  background-color:bisque; 
+  width: 120px; 
+ color: brown;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-style: oblique;
+ font-size: larger;
+
+} 

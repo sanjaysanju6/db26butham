@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1(id="title")= title
+  if (toShow == null)
+    h2 No instance to Display
+  else
+    - let helicopterid = toShow._id
+    - let helicopterType = toShow.helicopterType
+    - let helicopterPrice = toShow.helicopterPrice
+    - let helicopterColor = toShow.helicopterColor
+    div
+      div.row
+        div(class='costumeAttr mr-3') helicopter ID is:
+        div(class='values spcl') #{helicopterid}
+      div.row
+        div(class='costumeAttr mr-3') helicopter Type is:
+        div(class="values") #{helicopterType}
+      div.row
+        div(class='costumeAttr mr-3') helicopter Price is:
+        div(class="values") #{helicopterPrice}
+      div.row
+        div(class='costumeAttr mr-3')  helicopter Color is:
+        div(class="values") #{helicopterColor}

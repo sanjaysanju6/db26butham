@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  h1= title
+  if (toShow == null)
+    h2 No instance to update details 
+  else
+    - let helicopterid = toShow._id
+    - let helicopterType = toShow.helicopterType
+    - let helicopterPrice = toShow.helicopterPrice
+    - let helicopterColor = toShow.helicopterColor
+    
+    div.row(class='mb-2')
+        div.mr-1 ID is
+        div #{helicopterid}
+    - let actionid = "/resource/helicopters/" + helicopterid
+    form(id='helicopterform', action= actionid, method="PUT")
+        div.form-group
+            label.costumeAttr(for='helicopterType') helicopter Type
+            input#helicopterType(type='text', name='helicopterType', value= helicopterType )
+        div.form-group
+            label.costumeAttr(for='helicopterPrice') helicopter Price
+            input#helicopterPrice(type='number', name='helicopterPrice', value= helicopterPrice )
+        div.form-group
+            label.costumeAttr(for='helicopterColor') helicopter Color
+            input#helicopterColor(type='text', name='helicopterColor', value= helicopterColor )
+
+        input(type="submit")
+
+    script.
+        document.forms['helicopterform'].addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log(event.target)
+        // TODO do something here to show user that form is being submitted
+        fetch(event.target.action, {
+            method: 'PUT',
+            body: new URLSearchParams(new FormData(event.target)) // event.target is the form
+        }).then((resp) => {
+            return resp.json(); // or resp.text() or whatever the server sends
+        }).then((body) => {
+            alert("Update succeded")
+            window.location.href='/helicopter'
+            // TODO handle body
+        }).catch((error) => {
+            // TODO handle error
+            alert("Update failed " + error )
+        });
+        });
