@@ -42,7 +42,7 @@ async function recreateDB() {
   await helicopter.deleteMany();
   let instance1 = new helicopter({
     helicopterType: "Army helicopter",
-    helicopterPrice: 100000,
+    helicopterPrice: 100,
     helicopterColor: "Green",
   });
   instance1.save(function (err, doc) {
@@ -51,7 +51,7 @@ async function recreateDB() {
   });
   let instance2 = new helicopter({
     helicopterType: "fully articulated",
-    helicopterPrice: 5000000,
+    helicopterPrice: 500,
     helicopterColor: "Yellow",
   });
   instance2.save(function (err, doc) {
@@ -60,7 +60,7 @@ async function recreateDB() {
   });
   let instance3 = new helicopter({
     helicopterType: "teetering",
-    helicopterPrice: 3000000,
+    helicopterPrice: 3000,
     helicopterColor: "Grey",
   });
   instance3.save(function (err, doc) {

@@ -3,7 +3,7 @@ extends layout
 block content
   h1(id="title")= title
   if (toShow == null)
-    h2 No instance to Display
+    h2 No instance to Display Details
   else
     - let helicopterid = toShow._id
     - let helicopterType = toShow.helicopterType

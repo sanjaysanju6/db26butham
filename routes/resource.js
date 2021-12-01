@@ -12,8 +12,7 @@ router.post('/helicopters', helicopter_controller.helicopter_create_post);
 // DELETE request to delete helicopter.
 router.delete('/helicopters/:id', helicopter_controller.helicopter_delete);
 // PUT request to update helicopter.
-router.put('/helicopters/:id',
-helicopter_controller.helicopter_update_put);
+router.put('/helicopters/:id', helicopter_controller.helicopter_update_put);
 // GET request for one helicopter.
 router.get('/helicopters/:id', helicopter_controller.helicopter_detail);
 // GET request for list of all helicopter items.
